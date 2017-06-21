@@ -1,0 +1,9 @@
+#!/bin/bash
+
+log_line="[VOLTAGE]$(date +"%Y%m%d-%H%M")"
+
+for id in core sdram_c sdram_i sdram_p; do
+    log_line="${log_line} $id:$(vcgencmd measure_volts $id);"
+done
+
+echo $log_line
