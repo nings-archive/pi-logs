@@ -4,8 +4,7 @@ log_time=`date +"%Y-%m-%d %H:%M"`
 script_name=`basename "$0"`
 log_message="$log_time [$script_name]"
 
-for id in core sdram_c sdram_i sdram_p; do
-    log_message="$log_message $id:`vcgencmd measure_volts $id`;"
-done
+vcgencmd_temp=`vcgencmd measure_temp | grep -o [^=]*$`
 
+log_message="$log_message $vcgencmd_temp"
 echo $log_message

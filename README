@@ -1,0 +1,3 @@
+# pi-logs
+
+Some bash wrappers for using `vcgencmd` in raspberry pi for logging.

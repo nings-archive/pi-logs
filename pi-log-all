@@ -1,0 +1,13 @@
+#!/bin/bash
+
+path_this=`dirname $0`
+path_log="$path_this/logs"
+filename_log="${path_log}/pi-log_`date +%d-%m-%Y`.log"
+
+whoami
+
+exec >> $filename_log 2>&1
+
+$path_this/pi-voltage
+$path_this/pi-temperature
+$path_this/pi-traceroute

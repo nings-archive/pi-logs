@@ -1,8 +1,13 @@
 #!/bin/bash
+
+log_time=`date +"%Y-%m-%d %H:%M"`
+script_name=`basename "$0"`
+log_message="$log_time [$script_name]"
+
 trace_stdout=$(traceroute 8.8.8.8)
 trace_last_ln="${trace_stdout##*$'\n'}"
-dir_name=$(dirname $0)
 
 if [[ "$trace_last_ln" == "30  * * *" ]]; then
+    echo $log_message
     echo "$trace_stdout"
 fi
