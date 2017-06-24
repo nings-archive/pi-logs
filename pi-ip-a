@@ -5,4 +5,4 @@ script_name=`basename "$0"`
 log_message="$log_time [$script_name]"
 
 echo "$log_message
-`/sbin/ip a | grep eth0:`"
+`/sbin/ip a | grep -A 5 eth0:`"
