@@ -11,3 +11,5 @@ exec >> $filename_log 2>&1
 $path_this/pi-voltage
 $path_this/pi-temperature
 $path_this/pi-traceroute
+$path_this/pi-vnstat
+$path_this/pi-ip-a
